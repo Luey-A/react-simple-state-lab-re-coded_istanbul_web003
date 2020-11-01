@@ -1,45 +1,42 @@
 import React, { Component } from 'react';
-import Cell from './Cell'
+import React, { Component } from "react";
+import Cell from "./Cell";
 
 export default class Matrix extends Component {
-  
+
   genRow = (vals) => {
-   // console.log(this.props.values)
-   // replace me and render a cell component instead!
-    return vals.map(val =><div className="cell"><Cell value={val} /></div>)
+    return vals.map(val => <div className="cell"></div>) // replace me and render a cell component instead!
   }
 
-  
+    console.log(vals);
+    return vals.map((val) => <Cell value={val} />); // replace me and render a cell component instead!
+  };
+
   genMatrix = () => {
-   //console.log(this.props.values)
-   return this.props.values.map(rowVals => <div className="row">{this.genRow(rowVals)}</div>)
-    
+    return this.props.values.map(rowVals => <div className="row">{this.genRow(rowVals)}</div>)
   }
-  
+
+    console.log(this.props.values);
+    return this.props.values.map((rowVals) => (
+      <div className="row">{this.genRow(rowVals)}</div>
+    ));
+  };
+
   render() {
     return (
       <div id="matrix">
         {this.genMatrix()}
       </div>
     )
+    return <div id="matrix">{this.genMatrix()}</div>;
   }
-  
-}
 
+}
 
 Matrix.defaultProps = {
-  values: 
-  [
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
-    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',] 
-  ]
-}
+  values: (() => {
+    let defaultRow = new Array(10).fill("#F00");
+    return new Array(10).fill(defaultRow);
+  })(),
+};
 
