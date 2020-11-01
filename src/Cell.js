@@ -1,22 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-export default class Cell extends Component {
-    constructor(props) {
-        super()
-        this.state = {
-            color: props.value
-        }
-      }
+const { default: Matrix } = require("./Matrix");
 
-      changecolor = ()=> {
-        this.setState({
-            color: '#333'
-        })
-      }
+class Cell extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      color: props.value,
+    }; // ...define initial state with a key of 'color' set to the 'value' prop
+  }
 
-    render() {
-        return(
-            <div onClick={this.changecolor} className="cell" style={{backgroundColor: this.state.color}}></div>
-        )
-    }
-} 
+  updates = () => {
+    this.setState({
+      color: "#333",
+    });
+  };
+  render() {
+    return (
+      <div
+        className="cell"
+        style={{ backgroundColor: this.state.color }}
+        onClick={this.updates}
+      ></div>
+    );
+  }
+}
+
+export default Cell;
