@@ -6,5 +6,5 @@ import { pattern1 } from "./data.js";
 import Matrix from "./Matrix.js";
 import Cell from "./Cell";
 
-ReactDOM.render(<Matrix values={pattern1} />, document.getElementById('root'));
+
 ReactDOM.render(<Matrix values={pattern1} />, document.getElementById("root"));
