@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import Cell from './Cell';
+import Cell from './Cell'
 
 export default class Matrix extends Component {
-
-
+  
   genRow = (vals) => {
-    console.log(this.props.values)
-    return vals.map(val =>  <div className="cell"><Cell value={val}/></div>)
+   // console.log(this.props.values)
+   // replace me and render a cell component instead!
+    return vals.map(val =><div className="cell"><Cell value={val} /></div>)
   }
 
+  
   genMatrix = () => {
-    //console.log(this.props.values)
-    return this.props.values.map(rowVals => <div className="row">{this.genRow(rowVals)}</div>)
+   //console.log(this.props.values)
+   return this.props.values.map(rowVals => <div className="row">{this.genRow(rowVals)}</div>)
+    
   }
-
+  
   render() {
     return (
       <div id="matrix">
@@ -21,20 +23,23 @@ export default class Matrix extends Component {
       </div>
     )
   }
-
-}
-
-const defaultColorArr = [];
-for (let r = 0; r < 10; r++) {
-  defaultColorArr[r] = [];
-	for (let c = 0; c < 10; c++) {
-      defaultColorArr[r].push("#F00");
-     // console.log(defaultColorArr[r])
-    }
+  
 }
 
 
 Matrix.defaultProps = {
-    values: defaultColorArr,
-};
+  values: 
+  [
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',],
+    ['#F00', '#F00',  '#F00',  '#F00',  '#F00', '#F00', '#F00',  '#F00',  '#F00',  '#F00',] 
+  ]
+}
 
